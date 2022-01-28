@@ -1,11 +1,22 @@
-function Point({ bgImg, coverImg, title, rating, runtime, download, genres }) {
+import styles from "./Point.module.css";
+
+function Point({
+  bgImg,
+  coverImg,
+  title,
+  year,
+  rating,
+  runtime,
+  download,
+  genres,
+}) {
   return (
     <div>
-      <img src={bgImg} alt={title} />
-      <div>
-        <img src={coverImg} alt={title} />
-        <div>
-          <h1>{title}</h1>
+      <img className={styles.bg} src={bgImg} alt={title} />
+      <div className={styles.container}>
+        <img className={styles.cover} src={coverImg} alt={title} />
+        <div className={styles.textbox}>
+          <h1 className={styles.title}>{`${title} (${year})`}</h1>
           <ul>
             <li>{`Rating ${rating}`}</li>
             <li>{`Runtime ${runtime}m`}</li>

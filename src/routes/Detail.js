@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import Point from "../components/Point";
+import styles from "./Detail.module.css";
 
 function Detail() {
   const [loading, setLoading] = useState(true);
@@ -22,12 +23,15 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <h2>loading...</h2>
+        <div className={styles.loader}>
+          <h2>loading...</h2>
+        </div>
       ) : (
         <Point
           bgImg={datas.background_image}
           coverImg={datas.medium_cover_image}
           title={datas.title}
+          year={datas.year}
           rating={datas.rating}
           runtime={datas.runtime}
           download={datas.download_count}

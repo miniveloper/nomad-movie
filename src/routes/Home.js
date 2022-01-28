@@ -21,7 +21,7 @@ function Home() {
     <div className={styles.container}>
       {loading ? (
         <div className={styles.loader}>
-          <span>loading...</span>
+          <h2>loading...</h2>
         </div>
       ) : (
         <div className={styles.movies}>
